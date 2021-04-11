@@ -21,7 +21,7 @@ import java.util.Arrays;
  */
 @Configuration
 public class PluginsConfiguration {
-    private static Logger logger = LoggerFactory.getLogger(PluginsConfiguration.class);
+    private static final Logger logger = LoggerFactory.getLogger(PluginsConfiguration.class);
     private static final String PLUGIN_WEB_ROUTE = "/plugin";
     @Autowired
     private RequestMappingHandlerMapping requestMappingHandlerMapping;
@@ -71,9 +71,7 @@ public class PluginsConfiguration {
                         .produces(requestMappingAnnotation.produces())
                         .build();
                 requestMappingHandlerMapping.
-                        registerMapping(requestMappingInfo, entry,
-                                plugin.getEntry().getDeclaredMethod(method.getName())
-                        );
+                        registerMapping(requestMappingInfo, entry, method);
             }
         }
     }

@@ -20,4 +20,9 @@ public class UserManagementService {
     public List<String> getUsers() {
         return this.users;
     }
+
+    public String getUserById(int id) {
+        if (id < 0 || id >= users.size()) return null;
+        return users.get(id);
+    }
 }
