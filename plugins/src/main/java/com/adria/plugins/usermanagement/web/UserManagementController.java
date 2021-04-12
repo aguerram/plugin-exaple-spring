@@ -1,6 +1,7 @@
 package com.adria.plugins.usermanagement.web;
 
 import com.adria.plugins.PluginEntry;
+import com.adria.plugins.annotations.RegisterPlugin;
 import com.adria.plugins.usermanagement.service.UserManagementService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpMethod;
@@ -14,6 +15,7 @@ import javax.print.attribute.standard.Media;
 import java.util.List;
 
 @Component
+@RegisterPlugin(id = "users", version = "1.0", name = "Users Management", entryName = "com.adria.plugins.usermanagement.web.UserManagementController", enabled = true)
 public class UserManagementController implements PluginEntry {
     @Autowired
     private UserManagementService userManagementService;
@@ -37,4 +39,6 @@ public class UserManagementController implements PluginEntry {
                     .build();
         return ResponseEntity.ok(user + suffix);
     }
+
 }
+
