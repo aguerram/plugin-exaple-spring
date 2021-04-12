@@ -11,7 +11,6 @@ public @interface RegisterPlugin {
     String id() default "";
     String version() default "";
     String name() default "";
-    String entryName() default "";
     boolean enabled() default false;
 }
 

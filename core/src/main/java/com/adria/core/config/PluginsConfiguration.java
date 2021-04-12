@@ -77,7 +77,7 @@ public class PluginsConfiguration {
     }
 
     @PostConstruct
-    public void initializePlugins() throws NoSuchMethodException {
+    public void initializePlugins() throws NoSuchMethodException{
         PluginRegistry pluginRegistry = new PluginRegistry();
         for (Plugin p : pluginRegistry.getPluginList()) {
             if (!p.isEnabled()) continue;

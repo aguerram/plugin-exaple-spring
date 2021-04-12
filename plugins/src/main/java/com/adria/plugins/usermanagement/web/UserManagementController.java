@@ -15,7 +15,7 @@ import javax.print.attribute.standard.Media;
 import java.util.List;
 
 @Component
-@RegisterPlugin(id = "users", version = "1.0", name = "Users Management", entryName = "com.adria.plugins.usermanagement.web.UserManagementController", enabled = true)
+@RegisterPlugin(id = "users", version = "1.0", name = "Users Management", enabled = true)
 public class UserManagementController implements PluginEntry {
     @Autowired
     private UserManagementService userManagementService;

@@ -10,7 +10,7 @@ public class PluginRegistry {
 
     private List<Plugin> pluginList;
 
-    public PluginRegistry() throws ClassNotFoundException {
+    public PluginRegistry(){
         pluginList = new ArrayList<>();
         Reflections ref = new Reflections("com.adria.plugins", new TypeAnnotationsScanner());
         for (Class<?> c : ref.getTypesAnnotatedWith(RegisterPlugin.class, true)) {

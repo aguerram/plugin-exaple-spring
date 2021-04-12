@@ -7,7 +7,7 @@ import org.springframework.stereotype.Component;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Component
-@RegisterPlugin(id = "dashboard", version = "1.0", name = "Dashboard", entryName = "com.adria.plugins.dashboard.web.DashboardController", enabled = true)
+@RegisterPlugin(id = "dashboard", version = "1.0", name = "Dashboard", enabled = true)
 public class DashboardController implements PluginEntry {
     private final String className = this.getClass().getName();
     @RequestMapping("/home")
