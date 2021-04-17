@@ -1,6 +1,8 @@
-package com.adria.plugins;
+package com.adria.plugins._configuration;
 
-public class Plugin {
+import java.io.Serializable;
+
+public class Plugin implements Serializable {
     private String id;
     private String version;
     private String name;

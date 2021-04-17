@@ -1,4 +1,4 @@
-package com.adria.plugins.annotations;
+package com.adria.plugins._configuration.annotations;
 
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;
