@@ -3,14 +3,11 @@ package com.adria.plugins;
 import com.adria.plugins._configuration.Plugin;
 import com.adria.plugins._configuration.PluginEntry;
 import com.adria.plugins._configuration.annotations.RegisterPlugin;
-import com.adria.plugins.dashboard.web.DashboardController;
-import com.adria.plugins.usermanagement.web.UserManagementController;
 import org.reflections.Reflections;
 import org.reflections.scanners.TypeAnnotationsScanner;
 import org.springframework.stereotype.Component;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 @Component
