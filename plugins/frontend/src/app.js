@@ -1,27 +1,30 @@
-import React from 'react';
+import React, {Suspense} from 'react';
 import loadable from '@loadable/component'
+import {ErrorBoundary} from 'react-error-boundary'
+import {ErrorFallback} from "./shared/ErrorFallback";
 
 
-const DashboardIndex = loadable(() => import('./plugins/dashboard'))
-const UsersIndex = loadable(() => import('./plugins/user-management'))
+const UserPlugin = loadable(() => import(`./plugins/users/index`))
+const DashboardPlugin = loadable(() => import(`./plugins/dashboard/index`))
+
 
 function App({pluginID}) {
 
-    const pluginRender = () => {
+    const renderPlugin = () => {
         switch (pluginID) {
-            case "dashboard":
-                return <DashboardIndex/>
             case "users":
-                return <UsersIndex/>;
+                return <UserPlugin/>
+            case "dashboard":
+                return <DashboardPlugin/>
         }
     }
 
     return (
-        <div>
-            <h1>This is frontend for plugin {pluginID}</h1>
-            <hr/>
-            {pluginRender()}
-        </div>
+        <ErrorBoundary
+            FallbackComponent={ErrorFallback}
+        >
+            {renderPlugin()}
+        </ErrorBoundary>
     );
 }
 
